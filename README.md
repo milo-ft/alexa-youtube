@@ -3,10 +3,10 @@
 __Last update: 27 Dec 2019__
 
 
-## Sponsorship
-* First things first, I am asking for **$3/month** to use this skill. You can test it for free, but it will only ever play Gangnam Style.
-* You can donate through https://www.patreon.com/alexayoutube, or by clicking the **Sponsor** button at the top of this page. For just **$3/month**, I will give you a unique ARN which you can use to run this skill.
-* Email me at ndg63276@gmail.com to receive your ARN. Let me know what country you are in, and I will make sure the server is close to you, which makes it respond slightly faster.
+## Skill is now full
+* This skill has become so popular, I am hitting the limits on the free AWS lambda tier, which is 800000 seconds of CPU time per month!
+* Unfortunately this means I am getting charged by Amazon, so I need some way to recoup my costs.
+* So I am now asking for donations through https://www.patreon.com/alexayoutube, or by clicking the **Sponsor** button at the top of this page. For **$3/month**, I will give you a unique ARN which you can use to run this skill. Email me at ndg63276@gmail.com to receive your ARN.
 
 ## Features
 * Play audio from YouTube videos
@@ -30,7 +30,7 @@ __Last update: 27 Dec 2019__
 7. Skip forward or back in the video by "Alexa, ask YouTube to skip forward/backward to/by one minute and one second"
 8. Just play one video by "Alexa, ask YouTube to play one video Gangnam Style". You can switch in and out of "autoplay" mode by "Alexa, ask YouTube to turn on/off autoplay."
 9. Find the current time in the video by "Alexa, ask YouTube what is the timestamp?"
-10. If you want to play your own playlists, and the search feature finds other people's, send me a link to your youtube page.
+10. If you want to play your own playlists, and the search feature finds other people's, let me know your channel id, or add the environment variable MY_CHANNEL_ID.
 11. Play related videos, by "Alexa, ask YouTube to play more like this". This is a YouTube feature, don't ask me why it plays what it plays.
 
 Command 7 doesn't seem to work on Generation 1 Echo's, no idea why.
@@ -38,7 +38,7 @@ Commands 8, 9, 10 and 11 are only available in English at the moment. Need them 
 
 ## Known issues
 
-1. Some videos just fail, it's not clear why, they just do. The skill just moves to the next video on the playlist, but this can mean sometimes she announces a video that doesn't play.
+1. Some videos just fail, it's not clear why, they work locally. The skill just moves to the next video on the playlist, but this can mean sometimes she announces a video that doesn't play.
 2. It appears this skill only works on Amazon Echo products, not on 3rd party products that support Alexa. If you get it to work on another device, please let me know.
 3. Live videos work on Gen 2 devices onwards, not on the original Gen 1 Echo.
 
@@ -93,10 +93,9 @@ Make sure to follow step 19 above, enabling Testing for Development.
 * **She still says she can't find any video skills!**
 Try using a different word to start the skill. In English, say "Alexa, launch YouTube". In German, say "Alexa, öffne YouTube". In Italian, say "Alexa, avvia YouTube". In Spanish, say "Alexa, abrir YouTube".
 * **I am getting another issue, can you fix it?**
+Hopefully. Create an issue on github, with the exact wording of what you ask Alexa, so I can try and reproduce it.
 Hopefully, drop me an email!
 * **If I try and test in the Developer Console, it says 'Unsupported Directive. AudioPlayer is currently an unsupported namespace. Check the device log for more information.'**
 That is normal, the Developer Console doesn't play audio. You just need to enable testing through the Developer Console, then you can use the skill through your Alexa device.
 * **Why don't more videos work as video?**
 Alexa doesn't provide any ability to enqueue videos, so you only get one video, then it stops. So it only plays videos if you ask for one specific video, or if it is a live video.
-* **Didn't the code used to be freely available?**
-Yes, it did. Unfortunately people started stealing my code and taking credit for it, and asking for donations, so now the code is private.
